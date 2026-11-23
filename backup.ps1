@@ -12,7 +12,7 @@ $res = irm 'https://gfwsl.geforce.com/services_toolkit/services/com/nvidia/servi
 $res.IDS.downloadInfo | ? Name -Match 'Studio' | % DownloadURL | Select -First 1 | % { iwr $_ -OutFile . }
 
 cp $HOME/.ollama -Recurse -Force -Destination .
-
+mi backup.ps1 -Destination backup.ps1.OLD -Force
 
 
 
